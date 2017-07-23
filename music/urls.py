@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from . import views  # i.e. from current directory, import views
 
+app_name = 'music'
+
 # File contains url following the pattern "/music/*"
 urlpatterns = [
     # /music/

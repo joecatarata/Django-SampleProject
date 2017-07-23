@@ -10,16 +10,9 @@
         {% if all_albums %} <!-- if they have albums, run this code -->
 
             {%for album in all_albums%}
-            <!--Here all_albums is a collection of objects and album impersonates each
-            object in all_albums.
-            This is why album.id and album.album_title make sense-->
-            <li><a href = "{% url 'detail' album.id %}">{{album.album_title}}</a></li>
-                <!--
-                url tells django to use the special url
-                'detail' is namespace used in urls.py, the name of the url
-                album.id is the dynamic variable to be used in the url string
 
-                -->
+            <li><a href = "{% url 'music:detail' album.id %}">{{album.album_title}}</a></li>
+
             {%endfor%}
         {% else %}
             <h3>You don't have any albums</h3>
@@ -27,6 +20,15 @@
     </ul>
 </body>
 </html>
+
+ <!--
+                url tells django to use the special url
+                'detail' is namespace used in urls.py, the name of the url
+                album.id is the dynamic variable to be used in the url string
+
+                -->
+
+
 
 <!-- ((album.id)) -->
 
