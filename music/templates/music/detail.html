@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+    <img src = "{{ album.album_logo }}">
+    <h1>{{ album.album_title }}</h1>
+    <h3>{{ album.artist }}</h3>
+
+    <ul>
+        {% for song in album.song_set.all %} <!-- takes all songs in the passed album -->
+            <li>{{ song.song_title }} - {{ song.file_type }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
