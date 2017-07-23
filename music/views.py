@@ -13,7 +13,7 @@ from .models import Album, Song
     return HttpResponse(html)
 '''
 
-
+favorite = False
 def index(request):
     all_albums = Album.objects.all()
     # template = loader.get_template('music/index.html')
@@ -29,3 +29,7 @@ def detail(request, album_id):
 
     return render(request, 'music/detail.html', {'album': album})
     # You can also pass the dictionary file as is
+
+def favorite(request):
+
+    return HttpResponse('')
