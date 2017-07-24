@@ -1,10 +1,24 @@
+{% load staticfiles %}
+<!-- loads the path to your static files -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>iMeem</title>
+    <link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type = "text/css" href="{% static 'music/style.css' %}"/> <!-- references your static directory -->
 </head>
 <body>
+
+    <nav class = "navbar navbar-default">
+        <div class = "container-fluid">
+            <!-- Logo that takes you to home page aka 'index.html' -->
+            <div class = "navbar-header">
+                <a class="navbar-brand" href="{% url 'music:index' %}">iMeem</a>
+            </div>
+        </div>
+    </nav>
+
     <h1>Here are all my albums</h1>
     <ul>
         {% if all_albums %} <!-- if they have albums, run this code -->
